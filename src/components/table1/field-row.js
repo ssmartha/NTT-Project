@@ -34,12 +34,12 @@ function FieldRow() {
         Apellido
         </Text1>
       </FieldContainer>
-      <FieldContainer style={{width:"95px", borderWidth:"1px 0px 1px 1px"}}>
+      <FieldContainer style={{width:"95px", borderWidth:"1px 0px 1px 1px", alignItems:"center"}}>
         <Text1>
         Edad
         </Text1>
       </FieldContainer>
-      <FieldContainer style={{width:"95px", borderWidth:"1px 0px 1px 1px"}}>
+      <FieldContainer style={{width:"95px", borderWidth:"1px 0px 1px 1px", alignItems:"center"}}>
         <Text1>
         Genero
         </Text1>
@@ -49,12 +49,12 @@ function FieldRow() {
         Email
         </Text1>
       </FieldContainer>
-      <FieldContainer style={{width:"120px", borderWidth:"1px 0px 1px 1px"}}>
+      <FieldContainer style={{width:"120px", borderWidth:"1px 0px 1px 1px", alignItems:"center"}}>
         <Text1>
         Nacionalidad
         </Text1>
       </FieldContainer>
-      <FieldContainer style={{width:"95px", borderWidth:"1px 0px 1px 1px"}}>
+      <FieldContainer style={{width:"95px", borderWidth:"1px 0px 1px 1px", alignItems:"center"}}>
         <Text1>
         Foto
         </Text1>

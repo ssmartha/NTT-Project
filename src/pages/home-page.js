@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
+import {BsHourglassSplit} from "react-icons/bs"
 import Table1 from "../components/table1/table1"
-import { getUsersData, downloadUsersData } from "../services/random-user-api";
+import { getUsersData } from "../services/random-user-api";
+import { CSVLink} from "react-csv";
 
 const Wrapper1 = styled.div`
   display: flex;
@@ -49,13 +51,15 @@ const Button = styled.button`
     background: ${(props) => props.color || 'pink'};
     font-size: 14px;
     line-height: 120%;
-    font-weight: 600;
+    font-weight: 400;
     color: black;
     cursor:pointer;
 `;
 
 function HomePage() {
   const [usersData, setUsersData] = useState(null);
+
+  console.log("USERS DATA 11111", usersData)
 
   useEffect(() => {
     getUsersData(15)
@@ -65,27 +69,26 @@ function HomePage() {
       .catch(console.log);
   }, []);
 
-  // function handleButtonClick() {
-  //   console.log("HOLA CLICK!")
-  //   getUsersData(15);
-  // }
-
   return (
     <>
       {usersData ?
         <Wrapper1 style={{gap:"20px", marginTop:"20px", marginBottom:"20px"}}>
           <Text3>NTT CHALLENGE</Text3>
           <Table1 records={usersData} />
-          <Button
-            // onClick={handleButtonClick}
+          <CSVLink
+            data={usersData}
+            filename={"tabla-random-users.csv"}
           >
-            Download data in csv format
-          </Button>
+            <Button>
+              Download data in csv format
+            </Button>
+          </CSVLink>
         </Wrapper1>
         :
-        <Wrapper1 style={{marginTop:"20px"}}>
+        <Wrapper3 style={{marginTop:"20px", gap:"8px"}}>
           <Text3>NTT CHALLENGE</Text3>
-        </Wrapper1>
+          <BsHourglassSplit/>
+        </Wrapper3>
       }
     </>
   )
